@@ -407,18 +407,18 @@ FALLOFF:
         {
             FFBrightness := DTbrightness - NTbrightness
             BrightnessControl := Floor(NTbrightness + ((((FFSeconds - FFcount) * (100 / FFSeconds)) * FFBrightness) / 100))
-            Tooltip, % "Seconds: " FFcount "`n-Brightness: " NTbrightness + ((((FFSeconds - FFcount) * (100 / FFSeconds)) * FFBrightness) / 100)
+            ;Tooltip, % "Seconds: " FFcount "`n-Brightness: " NTbrightness + ((((FFSeconds - FFcount) * (100 / FFSeconds)) * FFBrightness) / 100)
         } else {
             FFBrightness := DTbrightness - NTbrightness
             BrightnessControl := Floor(NTbrightness + (((FFcount * (100 / FFSeconds)) * FFBrightness) / 100))
-            Tooltip,  % "Seconds: " FFcount "`n-Brightness: " NTbrightness + (((FFcount * (100 / FFSeconds)) * FFBrightness) / 100)
+            ;Tooltip,  % "Seconds: " FFcount "`n-Brightness: " NTbrightness + (((FFcount * (100 / FFSeconds)) * FFBrightness) / 100)
         }
         SetDisplayBrightness(BrightnessControl)
         
         FFcount++
     } else {
         SetTimer, FALLOFF, Off
-        Tooltip, 
+        ;Tooltip, 
         FFcount := 0
         Goto, RESTART
     }
